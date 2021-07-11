@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "lib": [ "es2020" ],
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es2020"
+  },
+  "include": [
+    "**/*"
+  ],
+  "references": [
+    { "path": "../../node-sdk-core/src" },
+    { "path": "../../node-sdk-authentication/src" }
+  ]
+}

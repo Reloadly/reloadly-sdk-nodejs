@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5D0C1042-5E2A-4F65-985E-820C4B315D53}"
+	ProjectSection(SolutionItems) = preProject
+		todo.txt = todo.txt
+	EndProjectSection
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "reloadly.core", "node-sdk-core\src\reloadly.core.njsproj", "{BD9FB857-1C31-4340-9CD1-72619754265B}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "reloadly.authentication", "node-sdk-authentication\src\reloadly.authentication.njsproj", "{93CE8CE8-DEAB-473B-BE8B-3262951B6459}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "reloadly-example", "reloadly-example\reloadly-example.njsproj", "{01011123-6EFA-46E0-A9D6-EE2245589C0C}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "reloadly.airtime", "node-sdk-airtime\src\reloadly.airtime.njsproj", "{8552AC03-2D70-4522-909E-AAA95D92CAF4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD9FB857-1C31-4340-9CD1-72619754265B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD9FB857-1C31-4340-9CD1-72619754265B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD9FB857-1C31-4340-9CD1-72619754265B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD9FB857-1C31-4340-9CD1-72619754265B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93CE8CE8-DEAB-473B-BE8B-3262951B6459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93CE8CE8-DEAB-473B-BE8B-3262951B6459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93CE8CE8-DEAB-473B-BE8B-3262951B6459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93CE8CE8-DEAB-473B-BE8B-3262951B6459}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01011123-6EFA-46E0-A9D6-EE2245589C0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01011123-6EFA-46E0-A9D6-EE2245589C0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01011123-6EFA-46E0-A9D6-EE2245589C0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01011123-6EFA-46E0-A9D6-EE2245589C0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8552AC03-2D70-4522-909E-AAA95D92CAF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8552AC03-2D70-4522-909E-AAA95D92CAF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8552AC03-2D70-4522-909E-AAA95D92CAF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8552AC03-2D70-4522-909E-AAA95D92CAF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1725E16A-2688-40FC-B4F9-0798000E4EB1}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{bd9fb857-1c31-4340-9cd1-72619754265b}</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <EnableTypeScript>true</EnableTypeScript>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">16.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>Reloadly.Core</Name>
+    <StartWebBrowser>True</StartWebBrowser>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
+    <JavaScriptTestFramework>mocha</JavaScriptTestFramework>
+    <JavaScriptTestRoot>test\</JavaScriptTestRoot>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include="Internal\Enums\Version.ts" />
+    <Content Include="tsconfig.json" />
+    <Content Include="package.json" />
+    <None Include="Constant\ServiceURLs.ts" />
+    <None Include="Dto\ApiError.ts" />
+    <None Include="Enums\Environment.ts" />
+    <None Include="Enums\Service.ts" />
+    <None Include="Exception\ApiException.ts" />
+    <None Include="Exception\RateLimitException.ts" />
+    <None Include="Exception\ReloadlyException.ts" />
+    <None Include="Dto\Response\Page.ts" />
+    <None Include="Exception\OAuth\OAuthException.ts" />
+    <None Include="Internal\Client\BaseOperation.ts" />
+    <None Include="Internal\Constant\Auth.ts" />
+    <None Include="Internal\Constant\GrantType.ts" />
+    <None Include="Internal\Constant\HttpHeader.ts" />
+    <None Include="Internal\Constant\MediaType.ts" />
+    <None Include="Internal\Dto\Request\BaseRequest.ts" />
+    <None Include="Internal\Dto\Request\Interfaces\IRequest.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Constant\" />
+    <Folder Include="Dto\" />
+    <Folder Include="Dto\Response\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Exception\" />
+    <Folder Include="Exception\OAuth\" />
+    <Folder Include="Internal\" />
+    <Folder Include="Internal\Client\" />
+    <Folder Include="Internal\Constant\" />
+    <Folder Include="Internal\Dto\" />
+    <Folder Include="Internal\Dto\Request\" />
+    <Folder Include="Internal\Dto\Request\Interfaces\" />
+    <Folder Include="Internal\Enums\" />
+    <Folder Include="Internal\Filter\" />
+    <Folder Include="Internal\Net\" />
+    <Folder Include="Internal\Util\" />
+    <Folder Include="test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Core.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Internal\Dto\Request\CustomRequest.ts" />
+    <TypeScriptCompile Include="Internal\Dto\Request\ICustomizableRequest.ts" />
+    <TypeScriptCompile Include="Internal\Dto\Request\ProxyOptions.ts" />
+    <TypeScriptCompile Include="Internal\Dto\Request\ProxyOptionsAuth.ts" />
+    <TypeScriptCompile Include="Internal\Filter\BaseFilter.ts" />
+    <TypeScriptCompile Include="Internal\Filter\QueryFilter.ts" />
+    <TypeScriptCompile Include="Internal\Net\Api.ts" />
+    <TypeScriptCompile Include="Internal\Net\ServiceApi.ts" />
+    <TypeScriptCompile Include="Internal\Net\Telemetry.ts" />
+    <TypeScriptCompile Include="Internal\Util\ExceptionUtil.ts" />
+    <TypeScriptCompile Include="Internal\Util\TelemetryUtil.ts" />
+    <TypeScriptCompile Include="test\TelemetryUtilTests.ts">
+      <Publish>True</Publish>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

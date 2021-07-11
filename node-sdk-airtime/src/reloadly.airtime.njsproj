@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8552ac03-2d70-4522-909e-aaa95d92caf4}</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <EnableTypeScript>true</EnableTypeScript>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">16.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>reloadly.airtime</Name>
+    <StartWebBrowser>True</StartWebBrowser>
+    <JavaScriptTestRoot>test\</JavaScriptTestRoot>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
+    <JavaScriptTestFramework>mocha</JavaScriptTestFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include="package.json" />
+    <Content Include="test\TestCredentials.ts">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dto\" />
+    <Folder Include="dto\request\" />
+    <Folder Include="dto\response\" />
+    <Folder Include="enums\" />
+    <Folder Include="filter\" />
+    <Folder Include="internal\" />
+    <Folder Include="internal\dto\" />
+    <Folder Include="internal\dto\request\" />
+    <Folder Include="operation\" />
+    <Folder Include="test" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Airtime.ts" />
+    <TypeScriptCompile Include="AirtimeApi.ts" />
+    <TypeScriptCompile Include="dto\request\EmailTopupRequest.ts" />
+    <TypeScriptCompile Include="dto\request\PhoneTopupRequest.ts" />
+    <TypeScriptCompile Include="dto\request\TopupRequest.ts" />
+    <TypeScriptCompile Include="dto\response\AccountBalanceInfo.ts" />
+    <TypeScriptCompile Include="dto\response\Country.ts" />
+    <TypeScriptCompile Include="dto\response\Discount.ts" />
+    <TypeScriptCompile Include="dto\response\FxRate.ts" />
+    <TypeScriptCompile Include="dto\response\Operator.ts" />
+    <TypeScriptCompile Include="dto\response\OperatorFxRate.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="dto\response\Phone.ts" />
+    <TypeScriptCompile Include="dto\response\PinDetail.ts" />
+    <TypeScriptCompile Include="dto\response\Promotion.ts" />
+    <TypeScriptCompile Include="dto\response\SimplifiedCountry.ts" />
+    <TypeScriptCompile Include="dto\response\SimplifiedOperator.ts" />
+    <TypeScriptCompile Include="dto\response\TopupTransaction.ts" />
+    <TypeScriptCompile Include="dto\response\TransactionBalanceInfo.ts" />
+    <TypeScriptCompile Include="enums\DenominationType.ts" />
+    <TypeScriptCompile Include="filter\OperatorFilter.ts" />
+    <TypeScriptCompile Include="filter\TransactionHistoryFilter.ts" />
+    <TypeScriptCompile Include="internal\dto\request\FxRateRequest.ts" />
+    <TypeScriptCompile Include="operation\AccountOperations.ts" />
+    <TypeScriptCompile Include="operation\BaseAirtimeOperation.ts" />
+    <TypeScriptCompile Include="operation\CountryOperations.ts" />
+    <TypeScriptCompile Include="operation\DiscountOperations.ts" />
+    <TypeScriptCompile Include="operation\OperatorOperations.ts" />
+    <TypeScriptCompile Include="operation\PromotionOperations.ts" />
+    <TypeScriptCompile Include="operation\TransactionHistoryOperations.ts" />
+    <TypeScriptCompile Include="operation\ReportOperations.ts" />
+    <TypeScriptCompile Include="operation\TopupOperations.ts" />
+    <TypeScriptCompile Include="test\TransactionHistoryOperationsTests.ts" />
+    <TypeScriptCompile Include="test\TopupOperationsTests.ts" />
+    <TypeScriptCompile Include="test\PromotionOperationsTests.ts" />
+    <TypeScriptCompile Include="test\OperatorOperationsTests.ts" />
+    <TypeScriptCompile Include="test\DiscountOperationsTests.ts" />
+    <TypeScriptCompile Include="test\CountryOperationsTests.ts" />
+    <TypeScriptCompile Include="test\AccountOperationsTests.ts" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
