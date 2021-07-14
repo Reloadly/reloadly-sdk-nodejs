@@ -4,7 +4,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:10.15.3
-    working_directory: ~/node-sdk-airtime\src
+    working_directory: ~/node-sdk-airtime/src
     # working_directory: ~/repo
     steps:
       - checkout
