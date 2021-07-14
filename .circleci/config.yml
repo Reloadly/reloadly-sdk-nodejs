@@ -8,6 +8,6 @@ jobs:
     # working_directory: ~/repo
     steps:
       - checkout
-      - run: npm install
-      - run: npm install --save-dev nyc
-      - run: npm test
+      - run: npm install --prefix node-sdk-airtime/src
+      - run: npm install --prefix node-sdk-airtime/src --save-dev nyc
+      - run: npm test --prefix node-sdk-airtime/src
