@@ -7,6 +7,6 @@ describe('Account Operations Tests', function () {
         this.timeout(0);
 
         var version = TelemetryUtil.getSDKVersion();
-        assert.ok(version == "1.0");
+        assert.ok(version == "1.0.0");
     })
 })

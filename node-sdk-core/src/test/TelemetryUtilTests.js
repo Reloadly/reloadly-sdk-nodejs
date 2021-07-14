@@ -6,7 +6,7 @@ describe('Account Operations Tests', function () {
     it('Get Package Version', async function () {
         this.timeout(0);
         var version = TelemetryUtil_1.TelemetryUtil.getSDKVersion();
-        assert.ok(version == "1.0");
+        assert.ok(version == "1.0.0");
     });
 });
 //# sourceMappingURL=TelemetryUtilTests.js.map
