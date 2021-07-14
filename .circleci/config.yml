@@ -3,7 +3,7 @@ version: 2.1 # Use version 2.1 to enable orb usage.
 jobs: 
   build:
     docker:
-      - image: circleci/node:10.15.3
+      - image: circleci/node:14.15.4
     working_directory: ~/node-sdk-airtime/src
     # working_directory: ~/repo
     steps:

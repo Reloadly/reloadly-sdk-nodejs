@@ -26,8 +26,8 @@ router.get('/', async (req, res) => {
         await airtimeApi.refreshAccessToken(countriesRequest);
         countries = await countriesRequest.execute(); //Re-execute the request
     }
-    catch (e) {
-        if (true /* e.getErrorCode().equals("TOKEN_EXPIRED") */) {
+    catch (ex) {
+        if (ex.errorCode.toUpperCase() === 'TOKEN_EXPIRED') {
             airtimeApi.refreshAccessToken(countriesRequest);
             countries = await countriesRequest.execute(); //Re-execute the request
         }

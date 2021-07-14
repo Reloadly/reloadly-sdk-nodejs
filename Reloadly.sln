@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5D0C1042-5E2A-4F65-985E-820C4B315D53}"
-	ProjectSection(SolutionItems) = preProject
-		todo.txt = todo.txt
-	EndProjectSection
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "reloadly.core", "node-sdk-core\src\reloadly.core.njsproj", "{BD9FB857-1C31-4340-9CD1-72619754265B}"
 EndProject
