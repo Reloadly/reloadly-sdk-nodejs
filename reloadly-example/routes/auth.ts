@@ -1,5 +1,5 @@
-import { AuthenticationApi } from "../../node-sdk-authentication/src/Authentication";
-import { ServiceURLs } from "../../node-sdk-core/src/Core";
+import ReloadlyAuthentication = require("@reloadly/reloadly.authentication");
+import ReloadlyCore = require("@reloadly/reloadly.core");
 
 import express = require('express');
 import { ApiCredentials } from "../ApiCredentials";
@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get('/', async (req: express.Request, res: express.Response) => {
 
-    var api = new AuthenticationApi(ApiCredentials.ClientId, ApiCredentials.ClientSecret, ServiceURLs.AIRTIME_SANDBOX);
+    var api = new ReloadlyAuthentication.AuthenticationApi(ApiCredentials.ClientId, ApiCredentials.ClientSecret, ReloadlyCore.ServiceURLs.AIRTIME_SANDBOX);
     var operation = api.clientCredentials();
     var request = operation.getAccessToken();
 

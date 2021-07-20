@@ -1,19 +1,14 @@
 import { ApiCredentials } from "../ApiCredentials";
 
-import {
-    AirtimeApi
-} from "../../node-sdk-airtime/src/Airtime";
-
-import {
-    Environment, ProxyOptions, ProxyOptionsAuth
-} from "../../node-sdk-core/src/Core";
+import ReloadlyAirtime = require("@reloadly/reloadly.airtime");
+import ReloadlyCore = require("@reloadly/reloadly.core");
 
 import express = require('express');
 const router = express.Router();
 
 router.get('/', async (req: express.Request, res: express.Response) => {
 
-    var api = new AirtimeApi(ApiCredentials.ClientId, ApiCredentials.ClientSecret, null, Environment.SANDBOX);
+    var api = new ReloadlyAirtime.AirtimeApi(ApiCredentials.ClientId, ApiCredentials.ClientSecret, null, ReloadlyCore.Environment.SANDBOX);
 
     try {
         var operation = await api.accounts();
