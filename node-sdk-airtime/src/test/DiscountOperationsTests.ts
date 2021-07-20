@@ -1,3 +1,4 @@
+require('dotenv').config();
 import { QueryFilter } from "../../../node-sdk-core/src/Core";
 import { AirtimeApi } from "../AirtimeApi";
 import { TestCredentials } from "./TestCredentials";
@@ -9,8 +10,8 @@ describe('Discount Operations Tests', function () {
         this.timeout(0);
 
         var airtimeApi = new AirtimeApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret);
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret());
 
         var operation = await airtimeApi.discounts();
         var req1 = operation.list();
@@ -26,8 +27,8 @@ describe('Discount Operations Tests', function () {
         this.timeout(0);
 
         var airtimeApi = new AirtimeApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret);
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret());
 
         var operation = await airtimeApi.discounts();
         var req1 = operation.list(new QueryFilter().withPage(2, 5));

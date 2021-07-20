@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+require('dotenv').config();
 const Airtime_1 = require("../Airtime");
 const AirtimeApi_1 = require("../AirtimeApi");
 const Phone_1 = require("../dto/response/Phone");
@@ -8,7 +9,7 @@ var assert = require('assert');
 describe('Topup Operations Tests', function () {
     it('Topup', async function () {
         this.timeout(0);
-        var airtimeApi = new AirtimeApi_1.AirtimeApi(TestCredentials_1.TestCredentials.ClientId, TestCredentials_1.TestCredentials.ClientSecret);
+        var airtimeApi = new AirtimeApi_1.AirtimeApi(TestCredentials_1.TestCredentials.ClientId(), TestCredentials_1.TestCredentials.ClientSecret());
         var operOp = await airtimeApi.operators();
         var operReq = operOp.listByCountryCode("GB");
         var operRes = await operReq.execute();

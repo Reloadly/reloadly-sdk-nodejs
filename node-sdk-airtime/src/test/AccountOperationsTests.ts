@@ -1,3 +1,4 @@
+require('dotenv').config();
 import { AirtimeApi } from "../AirtimeApi";
 import { TestCredentials } from "./TestCredentials";
 
@@ -8,8 +9,8 @@ describe('Account Operations Tests', function () {
         this.timeout(0);
 
         var airtimeApi = new AirtimeApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret);
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret());
 
         var accounts = await airtimeApi.accounts();
         var req = accounts.getBalance();

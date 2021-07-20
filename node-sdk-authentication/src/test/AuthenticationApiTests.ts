@@ -1,3 +1,4 @@
+require('dotenv').config();
 var assert = require('assert');
 import ReloadlyCore = require('@reloadly/reloadly.core');
 import { AuthenticationApi } from "../Authentication";
@@ -8,8 +9,8 @@ describe('Authentication Api Tests', function () {
         this.timeout(0);
 
         var authenticationApi = new AuthenticationApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret,
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret(),
             ReloadlyCore.Service.AIRTIME_SANDBOX
         );
 

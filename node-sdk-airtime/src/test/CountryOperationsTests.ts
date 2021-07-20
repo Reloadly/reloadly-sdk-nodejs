@@ -1,3 +1,4 @@
+require('dotenv').config();
 import { AirtimeApi } from "../AirtimeApi";
 import { TestCredentials } from "./TestCredentials";
 
@@ -8,8 +9,8 @@ describe('Country Operations Tests', function () {
         this.timeout(0);
 
         var airtimeApi = new AirtimeApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret);
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret());
 
         var operation = await airtimeApi.countries();
         var req = operation.getByCode("AF");
@@ -21,8 +22,8 @@ describe('Country Operations Tests', function () {
         this.timeout(0);
 
         var airtimeApi = new AirtimeApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret);
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret());
 
         var operation = await airtimeApi.countries();
         var req = operation.list();

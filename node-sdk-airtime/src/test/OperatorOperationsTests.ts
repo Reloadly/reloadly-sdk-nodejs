@@ -1,4 +1,4 @@
-import { QueryFilter } from "../../../node-sdk-core/src/Core";
+require('dotenv').config();
 import { AirtimeApi } from "../AirtimeApi";
 import { OperatorFilter } from "../filter/OperatorFilter";
 import { TestCredentials } from "./TestCredentials";
@@ -10,8 +10,8 @@ describe('Operator Operations Tests', function () {
         this.timeout(0);
 
         var airtimeApi = new AirtimeApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret);
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret());
 
         var operation = await airtimeApi.operators();
         var req = operation.autoDetect("+905435554433", "TR");
@@ -24,8 +24,8 @@ describe('Operator Operations Tests', function () {
         this.timeout(0);
 
         var airtimeApi = new AirtimeApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret);
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret());
 
         var operation = await airtimeApi.operators();
         var req1 = operation.listByCountryCode("GB");
@@ -42,8 +42,8 @@ describe('Operator Operations Tests', function () {
         this.timeout(0);
 
         var airtimeApi = new AirtimeApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret);
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret());
 
         var operation = await airtimeApi.operators();
         var req1 = operation.listByCountryCode("GB");
@@ -59,8 +59,8 @@ describe('Operator Operations Tests', function () {
         this.timeout(0);
 
         var airtimeApi = new AirtimeApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret);
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret());
 
         var operation = await airtimeApi.operators();
         var req1 = operation.list();
@@ -73,8 +73,8 @@ describe('Operator Operations Tests', function () {
         this.timeout(0);
 
         var airtimeApi = new AirtimeApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret);
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret());
 
         var operation = await airtimeApi.operators();
 
@@ -97,8 +97,8 @@ describe('Operator Operations Tests', function () {
         this.timeout(0);
 
         var airtimeApi = new AirtimeApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret);
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret());
 
         var operation = await airtimeApi.operators();
         var req1 = operation.listByCountryCode("TR");

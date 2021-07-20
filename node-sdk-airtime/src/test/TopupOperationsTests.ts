@@ -1,3 +1,4 @@
+require('dotenv').config();
 import { PhoneTopupRequest } from "../Airtime";
 import { AirtimeApi } from "../AirtimeApi";
 import { Phone } from "../dto/response/Phone";
@@ -10,8 +11,8 @@ describe('Topup Operations Tests', function () {
         this.timeout(0);
 
         var airtimeApi = new AirtimeApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret);
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret());
 
         var operOp = await airtimeApi.operators();
         var operReq = operOp.listByCountryCode("GB");

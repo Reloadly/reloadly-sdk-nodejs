@@ -1,3 +1,4 @@
+require('dotenv').config();
 import { AirtimeApi } from "../AirtimeApi";
 import { TestCredentials } from "./TestCredentials";
 
@@ -8,8 +9,8 @@ describe('TransactionHistory Operations Tests', function () {
         this.timeout(0);
 
         var airtimeApi = new AirtimeApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret);
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret());
 
         var reportOp = await airtimeApi.reports();
         var operation = reportOp.transactionsHistory();
@@ -23,8 +24,8 @@ describe('TransactionHistory Operations Tests', function () {
         this.timeout(0);
 
         var airtimeApi = new AirtimeApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret);
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret());
 
         var reportOp = await airtimeApi.reports();
         var operation = reportOp.transactionsHistory();

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+require('dotenv').config();
 const AirtimeApi_1 = require("../AirtimeApi");
 const OperatorFilter_1 = require("../filter/OperatorFilter");
 const TestCredentials_1 = require("./TestCredentials");
@@ -7,7 +8,7 @@ var assert = require('assert');
 describe('Operator Operations Tests', function () {
     it('Auto Detect', async function () {
         this.timeout(0);
-        var airtimeApi = new AirtimeApi_1.AirtimeApi(TestCredentials_1.TestCredentials.ClientId, TestCredentials_1.TestCredentials.ClientSecret);
+        var airtimeApi = new AirtimeApi_1.AirtimeApi(TestCredentials_1.TestCredentials.ClientId(), TestCredentials_1.TestCredentials.ClientSecret());
         var operation = await airtimeApi.operators();
         var req = operation.autoDetect("+905435554433", "TR");
         var res = await req.execute();
@@ -15,7 +16,7 @@ describe('Operator Operations Tests', function () {
     });
     it('Calculate FX Rate', async function () {
         this.timeout(0);
-        var airtimeApi = new AirtimeApi_1.AirtimeApi(TestCredentials_1.TestCredentials.ClientId, TestCredentials_1.TestCredentials.ClientSecret);
+        var airtimeApi = new AirtimeApi_1.AirtimeApi(TestCredentials_1.TestCredentials.ClientId(), TestCredentials_1.TestCredentials.ClientSecret());
         var operation = await airtimeApi.operators();
         var req1 = operation.listByCountryCode("GB");
         var res1 = await req1.execute();
@@ -26,7 +27,7 @@ describe('Operator Operations Tests', function () {
     });
     it('Get By ID', async function () {
         this.timeout(0);
-        var airtimeApi = new AirtimeApi_1.AirtimeApi(TestCredentials_1.TestCredentials.ClientId, TestCredentials_1.TestCredentials.ClientSecret);
+        var airtimeApi = new AirtimeApi_1.AirtimeApi(TestCredentials_1.TestCredentials.ClientId(), TestCredentials_1.TestCredentials.ClientSecret());
         var operation = await airtimeApi.operators();
         var req1 = operation.listByCountryCode("GB");
         var res1 = await req1.execute();
@@ -36,7 +37,7 @@ describe('Operator Operations Tests', function () {
     });
     it('List', async function () {
         this.timeout(0);
-        var airtimeApi = new AirtimeApi_1.AirtimeApi(TestCredentials_1.TestCredentials.ClientId, TestCredentials_1.TestCredentials.ClientSecret);
+        var airtimeApi = new AirtimeApi_1.AirtimeApi(TestCredentials_1.TestCredentials.ClientId(), TestCredentials_1.TestCredentials.ClientSecret());
         var operation = await airtimeApi.operators();
         var req1 = operation.list();
         var res1 = await req1.execute();
@@ -44,7 +45,7 @@ describe('Operator Operations Tests', function () {
     });
     it('List With Filters', async function () {
         this.timeout(0);
-        var airtimeApi = new AirtimeApi_1.AirtimeApi(TestCredentials_1.TestCredentials.ClientId, TestCredentials_1.TestCredentials.ClientSecret);
+        var airtimeApi = new AirtimeApi_1.AirtimeApi(TestCredentials_1.TestCredentials.ClientId(), TestCredentials_1.TestCredentials.ClientSecret());
         var operation = await airtimeApi.operators();
         var filter = new OperatorFilter_1.OperatorFilter()
             .includeData(true)
@@ -60,7 +61,7 @@ describe('Operator Operations Tests', function () {
     });
     it('List By Country Code', async function () {
         this.timeout(0);
-        var airtimeApi = new AirtimeApi_1.AirtimeApi(TestCredentials_1.TestCredentials.ClientId, TestCredentials_1.TestCredentials.ClientSecret);
+        var airtimeApi = new AirtimeApi_1.AirtimeApi(TestCredentials_1.TestCredentials.ClientId(), TestCredentials_1.TestCredentials.ClientSecret());
         var operation = await airtimeApi.operators();
         var req1 = operation.listByCountryCode("TR");
         var res1 = await req1.execute();

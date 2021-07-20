@@ -23,10 +23,8 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Content Include=".env" />
     <Content Include="package.json" />
-    <Content Include="test\TestCredentials.ts">
-      <SubType>Code</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dto\" />
@@ -74,6 +72,7 @@
     <TypeScriptCompile Include="operation\TransactionHistoryOperations.ts" />
     <TypeScriptCompile Include="operation\ReportOperations.ts" />
     <TypeScriptCompile Include="operation\TopupOperations.ts" />
+    <TypeScriptCompile Include="test\TestCredentials.ts" />
     <TypeScriptCompile Include="test\TransactionHistoryOperationsTests.ts" />
     <TypeScriptCompile Include="test\TopupOperationsTests.ts" />
     <TypeScriptCompile Include="test\PromotionOperationsTests.ts" />

@@ -16,7 +16,8 @@
     "test": "nyc mocha"
   },
   "dependencies": {
-    "@reloadly/reloadly.core": "^1.0.0"
+    "@reloadly/reloadly.core": "^1.0.0",
+    "dotenv": "^10.0.0"
   },
   "main": "Authentication.js",
   "license": "MIT",

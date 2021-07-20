@@ -1,3 +1,4 @@
+require('dotenv').config();
 import { AirtimeApi } from "../AirtimeApi";
 import { TestCredentials } from "./TestCredentials";
 
@@ -8,8 +9,8 @@ describe('Promotion Operations Tests', function () {
         this.timeout(0);
 
         var airtimeApi = new AirtimeApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret);
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret());
 
         var promoOp = await airtimeApi.promotions();
         var promoReq = promoOp.list();
@@ -30,8 +31,8 @@ describe('Promotion Operations Tests', function () {
         this.timeout(0);
 
         var airtimeApi = new AirtimeApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret);
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret());
 
         var promoOp = await airtimeApi.promotions();
         var promoReq = promoOp.list();
@@ -48,8 +49,8 @@ describe('Promotion Operations Tests', function () {
         this.timeout(0);
 
         var airtimeApi = new AirtimeApi(
-            TestCredentials.ClientId,
-            TestCredentials.ClientSecret);
+            TestCredentials.ClientId(),
+            TestCredentials.ClientSecret());
 
         var promoOp = await airtimeApi.promotions();
         var promoReq = promoOp.list();

@@ -21,6 +21,9 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Content Include=".env">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="package.json" />
     <Content Include="tsconfig.json" />
   </ItemGroup>
