@@ -1,10 +1,8 @@
 {
-  "name": "reloadly.authentication",
-  "version": "1.0.0",
+  "name": "@reloadly/reloadly.authentication",
+  "version": "1.0.3",
   "description": "reloadly.authentication",
-  "author": {
-    "name": ""
-  },
+  "author": "reloadly",
   "devDependencies": {
     "@types/mocha": "^8.2.2",
     "@types/node": "^15.6.2",
@@ -16,5 +14,13 @@
     "build": "tsc --build",
     "clean": "tsc --build --clean",
     "test": "nyc mocha"
+  },
+  "dependencies": {
+    "@reloadly/reloadly.core": "^1.0.0"
+  },
+  "main": "Authentication.js",
+  "license": "MIT",
+  "directories": {
+    "test": "test"
   }
 }

@@ -1,4 +1,4 @@
-import { Environment, IRequest, ServiceApi } from "../../node-sdk-core/src/Core";
+import ReloadlyCore = require("@reloadly/reloadly.core");
 import { AccountOperations } from "./operation/AccountOperations";
 import { CountryOperations } from "./operation/CountryOperations";
 import { DiscountOperations } from "./operation/DiscountOperations";
@@ -6,10 +6,10 @@ import { OperatorOperations } from "./operation/OperatorOperations";
 import { PromotionOperations } from "./operation/PromotionOperations";
 import { ReportOperations } from "./operation/ReportOperations";
 import { TopupOperations } from "./operation/TopupOperations";
-export declare class AirtimeApi extends ServiceApi {
+export declare class AirtimeApi extends ReloadlyCore.ServiceApi {
     private baseUrl;
     private environment;
-    constructor(clientId?: string, clientSecret?: string, accessToken?: string, environment?: Environment, enableLogging?: boolean, redactHeaders?: string[], enableTelemetry?: boolean);
+    constructor(clientId?: string, clientSecret?: string, accessToken?: string, environment?: ReloadlyCore.Environment, enableLogging?: boolean, redactHeaders?: string[], enableTelemetry?: boolean);
     operators(): Promise<OperatorOperations>;
     countries(): Promise<CountryOperations>;
     accounts(): Promise<AccountOperations>;
@@ -23,7 +23,7 @@ export declare class AirtimeApi extends ServiceApi {
      *
      * @param request - The request to refresh the token for
      */
-    refreshAccessToken<T>(request: IRequest<T>): Promise<void>;
+    refreshAccessToken<T>(request: ReloadlyCore.IRequest<T>): Promise<void>;
     private createBaseUrl;
     private getServiceByEnvironment;
     private retrieveAccessToken;

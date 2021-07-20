@@ -1,8 +1,8 @@
-import { CustomRequest } from "../../../node-sdk-core/src/Core";
+import ReloadlyCore = require('@reloadly/reloadly.core');
 import { IOAuth2ClientCredentialsRequest } from "./IOAuth2ClientCredentialsRequest";
 import { TokenHolder } from "../Response/TokenHolder";
 
-export class TokenRequest extends CustomRequest<TokenHolder> implements IOAuth2ClientCredentialsRequest {
+export class TokenRequest extends ReloadlyCore.CustomRequest<TokenHolder> implements IOAuth2ClientCredentialsRequest {
 
     constructor(url: string) {
         super(url, "POST", {}, {});

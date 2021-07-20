@@ -1,6 +1,5 @@
 var assert = require('assert');
-
-import { Service } from "../../../node-sdk-core/src/Core";
+import ReloadlyCore = require('@reloadly/reloadly.core');
 import { AuthenticationApi } from "../Authentication";
 import { TestCredentials } from "./TestCredentials";
 
@@ -11,7 +10,7 @@ describe('Authentication Api Tests', function () {
         var authenticationApi = new AuthenticationApi(
             TestCredentials.ClientId,
             TestCredentials.ClientSecret,
-            Service.AIRTIME_SANDBOX
+            ReloadlyCore.Service.AIRTIME_SANDBOX
         );
 
         var request = await authenticationApi.clientCredentials().getAccessToken();

@@ -1,0 +1,11 @@
+{
+  "name": "@reloadly/node-sdk-core",
+  "version": "1.0.1",
+  "description": "",
+  "main": "Core.js",
+  "scripts": {
+    "test": "nyc mocha"
+  },
+  "author": "reloadly",
+  "license": "MIT"
+}

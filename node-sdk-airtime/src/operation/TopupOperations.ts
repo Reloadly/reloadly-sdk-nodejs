@@ -1,7 +1,4 @@
-import {
-    IRequest
-} from "../../../node-sdk-core/src/Core";
-
+import ReloadlyCore = require("@reloadly/reloadly.core");
 import { BaseAirtimeOperation } from "./BaseAirtimeOperation";
 import { TopupRequest } from "../dto/request/TopupRequest";
 import { PhoneTopupRequest } from "../dto/request/PhoneTopupRequest";
@@ -17,7 +14,7 @@ export class TopupOperations extends BaseAirtimeOperation {
         super(baseUrl, apiToken, apiVersion, enableTelemetry);
     }
 
-    send(request: TopupRequest): IRequest<TopupTransaction> {
+    send(request: TopupRequest): ReloadlyCore.IRequest<TopupTransaction> {
         this.validateTopupRequest(request);
         return this.createPostRequest(TopupOperations.END_POINT, request);
     }

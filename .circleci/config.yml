@@ -8,6 +8,22 @@ jobs:
     # working_directory: ~/repo
     steps:
       - checkout
+      - run:
+          name: "test env var"
+          command: |
+            echo $env:CODECOV_TOKEN
+      # Core
       - run: npm install --prefix node-sdk-core/src
       - run: npm install --prefix node-sdk-core/src --save-dev nyc
       - run: npm test --prefix node-sdk-core/src
+      # Authentication
+      - run: npm install --prefix node-sdk-authentication/src
+      - run: npm install --prefix node-sdk-authentication/src --save-dev nyc
+      - run: npm test --prefix node-sdk-authentication/src
+      # Airtime
+      - run: npm install --prefix node-sdk-airtime/src
+      - run: npm install --prefix node-sdk-airtime/src --save-dev nyc
+      - run: npm test --prefix node-sdk-airtime/src
+      # Code Coverage
+      - run: npm install -g codecov
+      - run: npx nyc --reporter=lcov npm test & codecov

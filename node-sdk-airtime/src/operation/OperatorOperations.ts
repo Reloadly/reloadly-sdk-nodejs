@@ -1,9 +1,4 @@
-import {
-    IRequest,
-    Page,
-    QueryFilter
-} from "../../../node-sdk-core/src/Core";
-
+import ReloadlyCore = require("@reloadly/reloadly.core");
 import { BaseAirtimeOperation } from "./BaseAirtimeOperation";
 import { FxRateRequest } from "../internal/dto/request/FxRateRequest";
 import { Operator } from "../dto/response/Operator";
@@ -22,31 +17,31 @@ export class OperatorOperations extends BaseAirtimeOperation {
         super(baseUrl, apiToken, apiVersion, enableTelemetry);
     }
 
-    public list(filter?: OperatorFilter): IRequest<Page<Operator>> {
+    public list(filter?: OperatorFilter): ReloadlyCore.IRequest<ReloadlyCore.Page<Operator>> {
         var url = this.buildUrl();
         return this.createGetRequest(url, filter);
     };
 
-    public getById(operatorId: bigint, filter?: OperatorFilter): IRequest<Operator> {
+    public getById(operatorId: bigint, filter?: OperatorFilter): ReloadlyCore.IRequest<Operator> {
         this.validateOperatorId(operatorId);
         var url = this.buildUrl([operatorId.toString()])
         return this.createGetRequest(url, filter);
     }
 
-    public autoDetect(phone: string, countryCode: string, filter?: OperatorFilter): IRequest<Operator> {
+    public autoDetect(phone: string, countryCode: string, filter?: OperatorFilter): ReloadlyCore.IRequest<Operator> {
         this.validatePhoneAndCountryCode(phone, countryCode);
 
         var url = this.buildAutoDetectRequestUrl(phone, countryCode);
         return this.createGetRequest(url, filter);
     }
 
-    public listByCountryCode(countryCode: string, filter?: OperatorFilter): IRequest<Operator[]> {
+    public listByCountryCode(countryCode: string, filter?: OperatorFilter): ReloadlyCore.IRequest<Operator[]> {
         if (!countryCode) throw new Error("Country Code was not provided.");
         var url = this.buildListByCountryCodeRequestUrl(countryCode);
         return this.createGetRequest(url, filter);
     }
 
-    public calculateFxRate(operatorId: bigint, amount: number): IRequest<OperatorFxRate> {
+    public calculateFxRate(operatorId: bigint, amount: number): ReloadlyCore.IRequest<OperatorFxRate> {
         this.validateOperatorId(operatorId);
         if (amount < 0) throw new Error("'amount' must be greator than 0.");
         var url = this.buildCalculateFxRateRequestUrl(operatorId);

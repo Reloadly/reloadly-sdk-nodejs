@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OAuth2ClientCredentialsOperation = void 0;
-const Core_1 = require("../../../node-sdk-core/src/Core");
+const ReloadlyCore = require("@reloadly/reloadly.core");
 const TokenRequest_1 = require("../Request/TokenRequest");
-class OAuth2ClientCredentialsOperation extends Core_1.BaseOperation {
+class OAuth2ClientCredentialsOperation extends ReloadlyCore.BaseOperation {
     constructor(baseUrl, clientId, clientSecret, service, enableTelemetry = true) {
         super(baseUrl, enableTelemetry);
         this.clientId = clientId;
@@ -41,7 +41,7 @@ class OAuth2ClientCredentialsOperation extends Core_1.BaseOperation {
         let request = new TokenRequest_1.TokenRequest(url);
         request.body[OAuth2ClientCredentialsOperation.KEY_CLIENT_ID] = this.clientId;
         request.body[OAuth2ClientCredentialsOperation.KEY_CLIENT_SECRET] = this.clientSecret;
-        request.body[OAuth2ClientCredentialsOperation.KEY_GRANT_TYPE] = Core_1.GrantType.CLIENT_CREDENTIALS;
+        request.body[OAuth2ClientCredentialsOperation.KEY_GRANT_TYPE] = ReloadlyCore.GrantType.CLIENT_CREDENTIALS;
         request.setAudience(audience);
         request
             .addHeader("Accept", "application/json")

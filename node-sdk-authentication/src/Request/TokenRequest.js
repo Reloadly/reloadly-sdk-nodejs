@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TokenRequest = void 0;
-const Core_1 = require("../../../node-sdk-core/src/Core");
-class TokenRequest extends Core_1.CustomRequest {
+const ReloadlyCore = require("@reloadly/reloadly.core");
+class TokenRequest extends ReloadlyCore.CustomRequest {
     constructor(url) {
         super(url, "POST", {}, {});
     }

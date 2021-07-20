@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OperatorFilter = void 0;
-const Core_1 = require("../../../node-sdk-core/src/Core");
-class OperatorFilter extends Core_1.QueryFilter {
+const ReloadlyCore = require("@reloadly/reloadly.core");
+class OperatorFilter extends ReloadlyCore.QueryFilter {
     OperatorFilter() {
         this.parameters[OperatorFilter.INCLUDE_PIN] = true;
         this.parameters[OperatorFilter.INCLUDE_DATA] = true;

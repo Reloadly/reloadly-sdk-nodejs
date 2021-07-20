@@ -1,9 +1,4 @@
-import {
-    IRequest,
-    Page,
-    QueryFilter
-} from "../../../node-sdk-core/src/Core";
-
+import ReloadlyCore = require("@reloadly/reloadly.core");
 import { BaseAirtimeOperation } from "./BaseAirtimeOperation";
 import { Promotion } from "../dto/response/Promotion";
 
@@ -17,16 +12,16 @@ export class PromotionOperations extends BaseAirtimeOperation {
         super(baseUrl, apiToken, apiVersion, enableTelemetry);
     }
 
-    public list(filter?: QueryFilter): IRequest<Page<Promotion>> {
+    public list(filter?: ReloadlyCore.QueryFilter): ReloadlyCore.IRequest<ReloadlyCore.Page<Promotion>> {
         return this.createGetRequest(PromotionOperations.END_POINT, filter);
     }
 
-    public getById(promotionId: bigint): IRequest<Promotion> {
+    public getById(promotionId: bigint): ReloadlyCore.IRequest<Promotion> {
         if (!promotionId || promotionId < 0) throw new Error("'promotionId' must be greater than 0.");
         return this.createGetRequest(PromotionOperations.END_POINT + "/" + promotionId);
     }
 
-    public getByCountryCode(countryCode: string): IRequest<Promotion[]> {
+    public getByCountryCode(countryCode: string): ReloadlyCore.IRequest<Promotion[]> {
         if (!countryCode) throw new Error("'countryCode' must be provided.");
         return this.createGetRequest(
             PromotionOperations.END_POINT + "/" +
@@ -34,7 +29,7 @@ export class PromotionOperations extends BaseAirtimeOperation {
             countryCode);
     }
 
-    public getByOperatorId(operatorId: bigint): IRequest<Promotion[]> {
+    public getByOperatorId(operatorId: bigint): ReloadlyCore.IRequest<Promotion[]> {
         this.validateOperatorId(operatorId);
         return this.createGetRequest(
             PromotionOperations.END_POINT + "/" +

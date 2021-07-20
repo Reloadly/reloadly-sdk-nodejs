@@ -1,20 +1,27 @@
 {
-  "name": "reloadly.airtime",
-  "version": "1.0.0",
+  "name": "@reloadly/reloadly.airtime",
+  "version": "1.0.2",
   "description": "reloadly.airtime",
-  "author": {
-    "name": ""
-  },
+  "author": "reloadly",
   "devDependencies": {
-    "@types/mocha": "^8.2.2",
-    "@types/node": "^15.6.2",
-    "mocha": "^8.3.2",
+    "@types/mocha": "^8.2.3",
+    "@types/node": "^15.14.2",
+    "mocha": "^8.4.0",
     "nyc": "^15.1.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.3.5"
   },
   "scripts": {
     "build": "tsc --build",
     "clean": "tsc --build --clean",
     "test": "nyc mocha"
+  },
+  "dependencies": {
+    "@reloadly/reloadly.authentication": "^1.0.3",
+    "@reloadly/reloadly.core": "^1.0.0"
+  },
+  "main": "Airtime.js",
+  "license": "MIT",
+  "directories": {
+    "test": "test"
   }
 }

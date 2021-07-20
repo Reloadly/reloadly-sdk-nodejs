@@ -1,6 +1,7 @@
 import { DenominationType } from "../../enums/DenominationType";
-import { SimplifiedCountry } from "./SimplifiedCountry";
+import { FxRate } from "../../dto/response/FxRate";
 import { Promotion } from "../../dto/response/Promotion";
+import { SimplifiedCountry } from "./SimplifiedCountry";
 
 export class Operator {
 

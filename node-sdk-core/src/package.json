@@ -1,10 +1,8 @@
 {
-  "name": "reloadly.core",
+  "name": "@reloadly/reloadly.core",
   "version": "1.0.0",
   "description": "reloadly.core",
-  "author": {
-    "name": ""
-  },
+  "author": "reloadly",
   "devDependencies": {
     "@types/mocha": "^8.2.2",
     "@types/node": "^14.14.37",
@@ -19,6 +17,12 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "codecov.io": "^0.1.6",
     "jwt-decode": "^3.1.2"
-  }
+  },
+  "main": "Core.js",
+  "directories": {
+    "test": "test"
+  },
+  "license": "MIT"
 }

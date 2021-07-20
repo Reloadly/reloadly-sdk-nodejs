@@ -1,5 +1,5 @@
-import { QueryFilter } from "../../../node-sdk-core/src/Core";
-export declare class OperatorFilter extends QueryFilter {
+import ReloadlyCore = require("@reloadly/reloadly.core");
+export declare class OperatorFilter extends ReloadlyCore.QueryFilter {
     static readonly INCLUDE_PIN = "includePin";
     static readonly INCLUDE_DATA = "includeData";
     static readonly INCLUDE_BUNDLES = "includeBundles";

@@ -1,8 +1,8 @@
-import { BaseOperation, IRequest, QueryFilter } from "../../../node-sdk-core/src/Core";
-export declare abstract class BaseAirtimeOperation extends BaseOperation {
+import ReloadlyCore = require("@reloadly/reloadly.core");
+export declare abstract class BaseAirtimeOperation extends ReloadlyCore.BaseOperation {
     protected readonly apiVersion: string;
     protected readonly apiToken: string;
     constructor(baseUrl: string, apiToken: string, apiVersion: string, enableTelemetry: boolean);
-    protected createGetRequest<T>(relativeUrl: string, filter?: QueryFilter): IRequest<T>;
-    protected createPostRequest<T>(relativeUrl: string, body: {}): IRequest<T>;
+    protected createGetRequest<T>(relativeUrl: string, filter?: ReloadlyCore.QueryFilter): ReloadlyCore.IRequest<T>;
+    protected createPostRequest<T>(relativeUrl: string, body: {}): ReloadlyCore.IRequest<T>;
 }

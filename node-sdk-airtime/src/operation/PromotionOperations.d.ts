@@ -1,4 +1,4 @@
-import { IRequest, Page, QueryFilter } from "../../../node-sdk-core/src/Core";
+import ReloadlyCore = require("@reloadly/reloadly.core");
 import { BaseAirtimeOperation } from "./BaseAirtimeOperation";
 import { Promotion } from "../dto/response/Promotion";
 export declare class PromotionOperations extends BaseAirtimeOperation {
@@ -6,9 +6,9 @@ export declare class PromotionOperations extends BaseAirtimeOperation {
     static readonly PATH_SEGMENT_COUNTRIES = "countries";
     static readonly PATH_SEGMENT_OPERATORS = "operators";
     constructor(baseUrl: string, apiToken: string, apiVersion: string, enableTelemetry: boolean);
-    list(filter?: QueryFilter): IRequest<Page<Promotion>>;
-    getById(promotionId: bigint): IRequest<Promotion>;
-    getByCountryCode(countryCode: string): IRequest<Promotion[]>;
-    getByOperatorId(operatorId: bigint): IRequest<Promotion[]>;
+    list(filter?: ReloadlyCore.QueryFilter): ReloadlyCore.IRequest<ReloadlyCore.Page<Promotion>>;
+    getById(promotionId: bigint): ReloadlyCore.IRequest<Promotion>;
+    getByCountryCode(countryCode: string): ReloadlyCore.IRequest<Promotion[]>;
+    getByOperatorId(operatorId: bigint): ReloadlyCore.IRequest<Promotion[]>;
     validateOperatorId(operatorId: bigint): void;
 }

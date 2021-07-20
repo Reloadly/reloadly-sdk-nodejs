@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AirtimeApi = void 0;
-const Core_1 = require("../../node-sdk-core/src/Core");
-const Authentication_1 = require("../../node-sdk-authentication/src/Authentication");
+const ReloadlyAuthentication = require("@reloadly/reloadly.authentication");
+const ReloadlyCore = require("@reloadly/reloadly.core");
 const AccountOperations_1 = require("./operation/AccountOperations");
 const CountryOperations_1 = require("./operation/CountryOperations");
 const DiscountOperations_1 = require("./operation/DiscountOperations");
@@ -10,9 +10,9 @@ const OperatorOperations_1 = require("./operation/OperatorOperations");
 const PromotionOperations_1 = require("./operation/PromotionOperations");
 const ReportOperations_1 = require("./operation/ReportOperations");
 const TopupOperations_1 = require("./operation/TopupOperations");
-class AirtimeApi extends Core_1.ServiceApi {
-    constructor(clientId = null, clientSecret = null, accessToken = null, environment = Core_1.Environment.SANDBOX, enableLogging = false, redactHeaders = [], enableTelemetry = true) {
-        super(clientId, clientSecret, accessToken, enableLogging, redactHeaders, enableTelemetry, AirtimeApi.getSDKVersion(), Core_1.Version.AIRTIME_V1);
+class AirtimeApi extends ReloadlyCore.ServiceApi {
+    constructor(clientId = null, clientSecret = null, accessToken = null, environment = ReloadlyCore.Environment.SANDBOX, enableLogging = false, redactHeaders = [], enableTelemetry = true) {
+        super(clientId, clientSecret, accessToken, enableLogging, redactHeaders, enableTelemetry, AirtimeApi.getSDKVersion(), ReloadlyCore.Version.AIRTIME_V1);
         this.validateCredentials();
         this.environment = environment;
         this.baseUrl = this.createBaseUrl();
@@ -69,13 +69,13 @@ class AirtimeApi extends Core_1.ServiceApi {
         this.accessToken = null;
         const customizableRequest = request;
         const newAccessToken = await this.retrieveAccessToken();
-        customizableRequest.addHeader(Core_1.HttpHeader.AUTHORIZATION, "Bearer " + newAccessToken);
+        customizableRequest.addHeader(ReloadlyCore.HttpHeader.AUTHORIZATION, "Bearer " + newAccessToken);
     }
     createBaseUrl() {
         return this.getServiceByEnvironment(this.environment).toString();
     }
     getServiceByEnvironment(environment) {
-        return (environment == Core_1.Environment.LIVE) ? Core_1.Service.AIRTIME : Core_1.Service.AIRTIME_SANDBOX;
+        return (environment == ReloadlyCore.Environment.LIVE) ? ReloadlyCore.Service.AIRTIME : ReloadlyCore.Service.AIRTIME_SANDBOX;
     }
     async retrieveAccessToken() {
         var service = this.getServiceByEnvironment(this.environment);
@@ -90,7 +90,7 @@ class AirtimeApi extends Core_1.ServiceApi {
             return this.accessToken;
         }
         ;
-        var authApi = new Authentication_1.AuthenticationApi(this.clientId, this.clientSecret, service, this.enableLogging, this.headersToRedact, this.enableTelemetry)
+        var authApi = new ReloadlyAuthentication.AuthenticationApi(this.clientId, this.clientSecret, service, this.enableLogging, this.headersToRedact, this.enableTelemetry)
             .proxy(this.proxyOptions);
         var request = authApi.clientCredentials().getAccessToken();
         var tokenHolder = await request.execute();

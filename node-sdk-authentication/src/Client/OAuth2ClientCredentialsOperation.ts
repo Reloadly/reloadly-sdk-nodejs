@@ -1,8 +1,8 @@
-import { BaseOperation, GrantType } from "../../../node-sdk-core/src/Core";
+import ReloadlyCore = require('@reloadly/reloadly.core');
 import { IOAuth2ClientCredentialsRequest } from "../Request/IOAuth2ClientCredentialsRequest";
 import { TokenRequest } from "../Request/TokenRequest";
 
-export class OAuth2ClientCredentialsOperation extends BaseOperation {
+export class OAuth2ClientCredentialsOperation extends ReloadlyCore.BaseOperation {
 
     static readonly KEY_CLIENT_ID = "client_id";
     static readonly KEY_CLIENT_SECRET = "client_secret";
@@ -59,7 +59,7 @@ export class OAuth2ClientCredentialsOperation extends BaseOperation {
         let request: TokenRequest = new TokenRequest(url);
         request.body[OAuth2ClientCredentialsOperation.KEY_CLIENT_ID] = this.clientId;
         request.body[OAuth2ClientCredentialsOperation.KEY_CLIENT_SECRET] = this.clientSecret;
-        request.body[OAuth2ClientCredentialsOperation.KEY_GRANT_TYPE] = GrantType.CLIENT_CREDENTIALS;
+        request.body[OAuth2ClientCredentialsOperation.KEY_GRANT_TYPE] = ReloadlyCore.GrantType.CLIENT_CREDENTIALS;
         request.setAudience(audience);
         request
             .addHeader("Accept", "application/json")

@@ -1,16 +1,5 @@
-import {
-    Environment,
-    HttpHeader,
-    ICustomizableRequest,
-    IRequest,
-    ProxyOptions,
-    Service,
-    ServiceApi,
-    Version
-} from "../../node-sdk-core/src/Core";
-
-import { AuthenticationApi } from "../../node-sdk-authentication/src/Authentication";
-
+import ReloadlyAuthentication = require("@reloadly/reloadly.authentication");
+import ReloadlyCore = require("@reloadly/reloadly.core");
 import { AccountOperations } from "./operation/AccountOperations";
 import { CountryOperations } from "./operation/CountryOperations";
 import { DiscountOperations } from "./operation/DiscountOperations";
@@ -19,14 +8,14 @@ import { PromotionOperations } from "./operation/PromotionOperations";
 import { ReportOperations } from "./operation/ReportOperations";
 import { TopupOperations } from "./operation/TopupOperations";
 
-export class AirtimeApi extends ServiceApi {
+export class AirtimeApi extends ReloadlyCore.ServiceApi {
 
     private baseUrl: string;
-    private environment: Environment;
+    private environment: ReloadlyCore.Environment;
 
     constructor(
         clientId: string = null, clientSecret: string = null, accessToken: string = null,
-        environment: Environment = Environment.SANDBOX, enableLogging: boolean = false,
+        environment: ReloadlyCore.Environment = ReloadlyCore.Environment.SANDBOX, enableLogging: boolean = false,
         redactHeaders: string[] = [],
         enableTelemetry: boolean = true) {
 
@@ -34,7 +23,7 @@ export class AirtimeApi extends ServiceApi {
             clientId, clientSecret, accessToken,
             enableLogging, redactHeaders,
             enableTelemetry,
-            AirtimeApi.getSDKVersion(), Version.AIRTIME_V1);
+            AirtimeApi.getSDKVersion(), ReloadlyCore.Version.AIRTIME_V1);
 
         this.validateCredentials();
         this.environment = environment;
@@ -96,19 +85,19 @@ export class AirtimeApi extends ServiceApi {
      *
      * @param request - The request to refresh the token for
      */
-    async refreshAccessToken<T>(request: IRequest<T>) {
+    async refreshAccessToken<T>(request: ReloadlyCore.IRequest<T>) {
         this.accessToken = null;
-        const customizableRequest: ICustomizableRequest<T> = <ICustomizableRequest<T>>request;
+        const customizableRequest: ReloadlyCore.ICustomizableRequest<T> = <ReloadlyCore.ICustomizableRequest<T>>request;
         const newAccessToken: string = await this.retrieveAccessToken();
-        customizableRequest.addHeader(HttpHeader.AUTHORIZATION, "Bearer " + newAccessToken);
+        customizableRequest.addHeader(ReloadlyCore.HttpHeader.AUTHORIZATION, "Bearer " + newAccessToken);
     }
 
     private createBaseUrl(): string {
         return this.getServiceByEnvironment(this.environment).toString();
     }
 
-    private getServiceByEnvironment(environment: Environment): Service {
-        return (environment == Environment.LIVE) ? Service.AIRTIME : Service.AIRTIME_SANDBOX;
+    private getServiceByEnvironment(environment: ReloadlyCore.Environment): ReloadlyCore.Service {
+        return (environment == ReloadlyCore.Environment.LIVE) ? ReloadlyCore.Service.AIRTIME : ReloadlyCore.Service.AIRTIME_SANDBOX;
     }
 
     private async retrieveAccessToken(): Promise<string> {
@@ -120,13 +109,13 @@ export class AirtimeApi extends ServiceApi {
         return accessToken;
     }
 
-    private async doGetAccessToken(service: Service): Promise<string> {
+    private async doGetAccessToken(service: ReloadlyCore.Service): Promise<string> {
         if (this.accessToken) {
             return this.accessToken;
         };
 
         var authApi =
-            new AuthenticationApi(
+            new ReloadlyAuthentication.AuthenticationApi(
                 this.clientId, this.clientSecret, service, this.enableLogging, this.headersToRedact, this.enableTelemetry)
                 .proxy(this.proxyOptions);
 

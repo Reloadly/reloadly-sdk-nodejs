@@ -1,6 +1,6 @@
-import { BaseOperation } from "../../../node-sdk-core/src/Core";
+import ReloadlyCore = require('@reloadly/reloadly.core');
 import { IOAuth2ClientCredentialsRequest } from "../Request/IOAuth2ClientCredentialsRequest";
-export declare class OAuth2ClientCredentialsOperation extends BaseOperation {
+export declare class OAuth2ClientCredentialsOperation extends ReloadlyCore.BaseOperation {
     static readonly KEY_CLIENT_ID = "client_id";
     static readonly KEY_CLIENT_SECRET = "client_secret";
     static readonly KEY_GRANT_TYPE = "grant_type";

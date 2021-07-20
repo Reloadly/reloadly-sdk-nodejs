@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TransactionHistoryFilter = void 0;
-const Core_1 = require("../../../node-sdk-core/src/Core");
-class TransactionHistoryFilter extends Core_1.QueryFilter {
+const ReloadlyCore = require("@reloadly/reloadly.core");
+class TransactionHistoryFilter extends ReloadlyCore.QueryFilter {
     withPage(pageNumber, pageSize) {
         super.withPage(pageNumber, pageSize);
         return this;

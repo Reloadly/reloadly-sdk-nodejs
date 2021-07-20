@@ -1,9 +1,4 @@
-import {
-    IRequest,
-    Page,
-    QueryFilter
-} from "../../../node-sdk-core/src/Core";
-
+import ReloadlyCore = require("@reloadly/reloadly.core");
 import { BaseAirtimeOperation } from "./BaseAirtimeOperation";
 import { Discount } from "../dto/response/Discount";
 
@@ -16,12 +11,12 @@ export class DiscountOperations extends BaseAirtimeOperation {
         super(baseUrl, apiToken, apiVersion, enableTelemetry);
     }
 
-    public list(filter?: QueryFilter): IRequest<Page<Discount>> {
+    public list(filter?: ReloadlyCore.QueryFilter): ReloadlyCore.IRequest<ReloadlyCore.Page<Discount>> {
         var url = DiscountOperations.END_POINT + "/" + DiscountOperations.PATH_SEGMENT_DISCOUNT;
         return this.createGetRequest(url, filter);
     }
 
-    public getByOperatorId(operatorId: bigint): IRequest<Discount> {
+    public getByOperatorId(operatorId: bigint): ReloadlyCore.IRequest<Discount> {
         this.validateOperatorId(operatorId);
         var url = DiscountOperations.END_POINT + "/" + operatorId + "/" + DiscountOperations.PATH_SEGMENT_DISCOUNT;
         return this.createGetRequest(url);

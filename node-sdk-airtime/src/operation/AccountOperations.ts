@@ -1,7 +1,4 @@
-import {
-    IRequest
-} from "../../../node-sdk-core/src/Core";
-
+import ReloadlyCore = require("@reloadly/reloadly.core");
 import { AccountBalanceInfo } from "../dto/response/AccountBalanceInfo";
 import { BaseAirtimeOperation } from "./BaseAirtimeOperation";
 
@@ -14,7 +11,7 @@ export class AccountOperations extends BaseAirtimeOperation {
         super(baseUrl, apiToken, apiVersion, enableTelemetry);
     }
 
-    public getBalance(): IRequest<AccountBalanceInfo> {
+    public getBalance(): ReloadlyCore.IRequest<AccountBalanceInfo> {
         var url = AccountOperations.END_POINT + "/" + AccountOperations.PATH_BALANCE;
         return this.createGetRequest(url);
     }

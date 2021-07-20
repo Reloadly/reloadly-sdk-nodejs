@@ -1,8 +1,6 @@
-import {
-    QueryFilter
-} from "../../../node-sdk-core/src/Core";
+import ReloadlyCore = require("@reloadly/reloadly.core");
 
-export class TransactionHistoryFilter extends QueryFilter {
+export class TransactionHistoryFilter extends ReloadlyCore.QueryFilter {
 
     static readonly END_DATE = "endDate";
     static readonly START_DATE = "startDate";
