@@ -25,5 +25,5 @@ jobs:
       - run: npm install --prefix node-sdk-airtime/src --save-dev nyc
       - run: npm test --prefix node-sdk-airtime/src
       # Code Coverage
-      - run: npm install -g codecov
+      - run: npm install --prefix=$HOME/.local -g codecov
       - run: npx nyc --reporter=lcov npm test & codecov
