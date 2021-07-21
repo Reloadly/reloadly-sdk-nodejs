@@ -17,7 +17,7 @@ export class TelemetryUtil {
 
         let values = {};
 
-        if (telemetry.name) values[this.NAME_KEY] = telemetry.name;
+        values[this.NAME_KEY] = telemetry.name;
         if (telemetry.apiVersion) values[this.VERSION_KEY] = telemetry.apiVersion;
 
         var env = {};

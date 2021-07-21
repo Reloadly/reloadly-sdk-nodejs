@@ -21,7 +21,7 @@ class ExceptionUtil {
             apiException.errorCode = apiError.errorCode;
         }
         if (apiError.timeStamp) {
-            apiException.timeStamp = apiException.timeStamp;
+            apiException.timeStamp = apiError.timeStamp;
         }
         if (apiError.details) {
             apiException.details = apiError.details;

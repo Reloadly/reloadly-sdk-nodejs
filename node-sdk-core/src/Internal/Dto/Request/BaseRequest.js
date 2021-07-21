@@ -34,11 +34,13 @@ class BaseRequest {
         if (this.timeoutInMilliseconds) {
             req["timeout"] = this.timeoutInMilliseconds;
         }
-        var response = await axios(req);
-        if (response.status < 200 || response.status > 299) {
-            throw this.createResponseException(response);
+        try {
+            var response = await axios(req);
+            return response.data;
         }
-        return response.data;
+        catch (err) {
+            throw this.createResponseException(err.response);
+        }
     }
     proxy(options) {
         this.proxyOptions = options;
@@ -49,11 +51,11 @@ class BaseRequest {
         return this;
     }
     createResponseException(response) {
-        if (response.status == BaseRequest.STATUS_CODE_TOO_MANY_REQUEST) {
+        if (response?.status == BaseRequest.STATUS_CODE_TOO_MANY_REQUEST) {
             return this.createRateLimitException(response);
         }
-        if (!response.body) {
-            return new ApiException_1.ApiException("No response from server, please try again or contact support", response.status, response.path);
+        if (!response?.body) {
+            return new ApiException_1.ApiException("No response from server, please try again or contact support", response?.path, response?.status);
         }
         return ExceptionUtil_1.ExceptionUtil.convert(response.body, response.status);
     }

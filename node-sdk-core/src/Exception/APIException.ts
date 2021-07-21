@@ -6,13 +6,15 @@ import { ReloadlyException } from "./ReloadlyException";
 export class ApiException extends ReloadlyException {
     constructor(m: string, path?: string, httpStatusCode?: number, errorCode?: string, details?: {}[]) {
         super(m);
+        this.httpStatusCode = httpStatusCode;
+        this.path = path;
         Object.setPrototypeOf(this, ApiException.prototype);
     }
 
     /**
      * The end-point that was used when the error occurred
      */
-    path: string;
+    path?: string;
 
     /**
      * HTTP status indicate whether a specific HTTP request has been successfully completed.

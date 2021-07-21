@@ -61,6 +61,7 @@
     <Folder Include="Internal\Net\" />
     <Folder Include="Internal\Util\" />
     <Folder Include="test\" />
+    <Folder Include="test\TestTypes\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Core.ts">
@@ -77,6 +78,9 @@
     <TypeScriptCompile Include="Internal\Net\Telemetry.ts" />
     <TypeScriptCompile Include="Internal\Util\ExceptionUtil.ts" />
     <TypeScriptCompile Include="Internal\Util\TelemetryUtil.ts" />
+    <TypeScriptCompile Include="test\OAuthExceptionTests.ts" />
+    <TypeScriptCompile Include="test\CustomRequestTests.ts" />
+    <TypeScriptCompile Include="test\ExceptionUtilTests.ts" />
     <TypeScriptCompile Include="test\TelemetryUtilTests.ts">
       <Publish>True</Publish>
     </TypeScriptCompile>

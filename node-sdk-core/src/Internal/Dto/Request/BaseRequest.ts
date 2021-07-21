@@ -54,13 +54,12 @@ export abstract class BaseRequest<T> implements IRequest<T> {
             req["timeout"] = this.timeoutInMilliseconds;
         }
 
-        var response = await axios(req);
-
-        if (response.status < 200 || response.status > 299) {
-            throw this.createResponseException(response);
+        try {
+            var response = await axios(req);
+            return response.data;
+        } catch (err) {
+            throw this.createResponseException(err.response);
         }
-
-        return response.data;
     }
 
     proxy(options?: ProxyOptions): this {
@@ -74,14 +73,14 @@ export abstract class BaseRequest<T> implements IRequest<T> {
     }
 
     private createResponseException(response: { body, status, path, headers: {} }): ReloadlyException {
-        if (response.status == BaseRequest.STATUS_CODE_TOO_MANY_REQUEST) {
+        if (response?.status == BaseRequest.STATUS_CODE_TOO_MANY_REQUEST) {
             return this.createRateLimitException(response);
         }
 
-        if (!response.body) {
+        if (!response?.body) {
             return new ApiException(
                 "No response from server, please try again or contact support",
-                response.status, response.path);
+                response?.path, response?.status);
         }
 
         return ExceptionUtil.convert(<ApiError>response.body, response.status);

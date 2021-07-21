@@ -7,7 +7,7 @@ export declare class ApiException extends ReloadlyException {
     /**
      * The end-point that was used when the error occurred
      */
-    path: string;
+    path?: string;
     /**
      * HTTP status indicate whether a specific HTTP request has been successfully completed.
      * Responses are grouped in five classes: informational responses, successful responses,

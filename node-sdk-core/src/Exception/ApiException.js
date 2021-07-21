@@ -8,6 +8,8 @@ const ReloadlyException_1 = require("./ReloadlyException");
 class ApiException extends ReloadlyException_1.ReloadlyException {
     constructor(m, path, httpStatusCode, errorCode, details) {
         super(m);
+        this.httpStatusCode = httpStatusCode;
+        this.path = path;
         Object.setPrototypeOf(this, ApiException.prototype);
     }
 }

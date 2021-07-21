@@ -25,7 +25,7 @@ export class ExceptionUtil {
         }
 
         if (apiError.timeStamp) {
-            apiException.timeStamp = apiException.timeStamp;
+            apiException.timeStamp = apiError.timeStamp;
         }
 
         if (apiError.details) {
