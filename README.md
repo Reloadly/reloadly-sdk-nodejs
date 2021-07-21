@@ -2,6 +2,9 @@
 
 [![CircleCI][circle-ci-badge]][circle-ci-url]
 [![MIT][mit-badge]][mit-url]
+[![npm-airtime-badge]][npm-airtime-url]
+[![npm-authentication-badge]][npm-authentication-url]
+[![npm-core-badge]][npm-core-url]
 [![codecov](https://codecov.io/gh/Reloadly/reloadly-sdk-nodejs/branch/main/graph/badge.svg?token=M6750A3FJX)](https://codecov.io/gh/Reloadly/reloadly-sdk-nodejs)
 
 The **Reloadly SDK for Node.JS** enables developers to easily work with [Reloadly Services][reloadly-main-site]
@@ -35,8 +38,8 @@ dependencies for the specific services you use only. For example : Authenticatio
 Add specific dependencies to your project's build file:
 
 ```
-npm install reloadly-airtime
-npm install reloadly-authentication
+npm install @reloadly/reloadly-airtime
+npm install @reloadly/reloadly-authentication
 ```
 
 ## Getting Help
@@ -119,3 +122,15 @@ This project is licensed under the MIT license. See the [LICENSE](LICENSE) file 
 [stack-overflow]: http://stackoverflow.com/questions/tagged/reloadly-reloadly-sdk
 
 [support-center]: https://faq.reloadly.com/en/articles/3423196-contacting-support
+
+[npm-airtime-badge]: https://img.shields.io/npm/v/@reloadly/reloadly.airtime?label=reloadly.airtime
+
+[npm-airtime-url]: https://www.npmjs.com/package/@reloadly/reloadly.airtime
+
+[npm-authentication-badge]: https://img.shields.io/npm/v/@reloadly/reloadly.authentication?label=reloadly.authentication
+
+[npm-authentication-url]: https://www.npmjs.com/package/@reloadly/reloadly.authentication
+
+[npm-core-badge]: https://img.shields.io/npm/v/@reloadly/reloadly.core?label=reloadly.core
+
+[npm-core-url]: https://www.npmjs.com/package/@reloadly/reloadly.core
