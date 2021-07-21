@@ -123,14 +123,14 @@ This project is licensed under the MIT license. See the [LICENSE](LICENSE) file 
 
 [support-center]: https://faq.reloadly.com/en/articles/3423196-contacting-support
 
-[npm-airtime-badge]: https://img.shields.io/npm/v/@reloadly/reloadly.airtime?label=reloadly.airtime
+[npm-airtime-badge]: https://img.shields.io/npm/v/@reloadly/reloadly.airtime?label=%40reloadly%2Freloadly.airtime
 
 [npm-airtime-url]: https://www.npmjs.com/package/@reloadly/reloadly.airtime
 
-[npm-authentication-badge]: https://img.shields.io/npm/v/@reloadly/reloadly.authentication?label=reloadly.authentication
+[npm-authentication-badge]: https://img.shields.io/npm/v/@reloadly/reloadly.authentication?label=%40reloadly%2Freloadly.authentication
 
 [npm-authentication-url]: https://www.npmjs.com/package/@reloadly/reloadly.authentication
 
-[npm-core-badge]: https://img.shields.io/npm/v/@reloadly/reloadly.core?label=reloadly.core
+[npm-core-badge]: https://img.shields.io/npm/v/@reloadly/reloadly.core?label=%40reloadly%2Freloadly.core
 
 [npm-core-url]: https://www.npmjs.com/package/@reloadly/reloadly.core
