@@ -30,7 +30,7 @@ complete without errors.
 ### Checklist
 
 - [ ] I have read
-  the [Reloadly general contribution guidelines](https://github.com/reloadly/reloadly-sdk-java/blob/master/GENERAL-CONTRIBUTING.md)
+  the [Reloadly general contribution guidelines](https://github.com/reloadly/reloadly-sdk-nodejs/blob/master/GENERAL-CONTRIBUTING.md)
 - [ ] I have read
-  the [Reloadly Code of Conduct](https://github.com/reloadly/reloadly-sdk-java/blob/master/CODE-OF-CONDUCT.md)
+  the [Reloadly Code of Conduct](https://github.com/reloadly/reloadly-sdk-nodejs/blob/master/CODE-OF-CONDUCT.md)
 - [ ] All existing and new tests complete without errors

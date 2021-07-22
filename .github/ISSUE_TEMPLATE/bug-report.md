@@ -16,7 +16,7 @@ labels: bug, needs-triage
 <!--- Tell us what happens instead of the expected behavior -->
 
 <!--- Include full errors, uncaught exceptions, stack traces, and relevant logs -->
-<!--- To turn on SDK logging, follow instructions here: https://github.com/reloadly/reloadly-sdk-java/blob/master/reloadly-java-sdk-airtime/USAGE.md#logging-request--response -->
+<!--- To turn on SDK logging, follow instructions here: https://github.com/reloadly/reloadly-sdk-nodejs/blob/master/node-sdk-airtime/USAGE.md#logging-request--response -->
 <!--- If service responses are relevant, please include logs -->
 
 ## Steps to Reproduce
@@ -33,6 +33,6 @@ labels: bug, needs-triage
 
 ## Your Environment
 <!--- Include as many relevant details about the environment where the bug was discovered -->
-* Reloadly Java SDK version used:
-* JDK version used:
+* Reloadly NodeJS SDK version used:
+* NodeJS Version used:
 * Operating System and version:

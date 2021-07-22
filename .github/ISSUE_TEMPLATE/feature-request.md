@@ -31,6 +31,6 @@ labels: feature-request, needs-triage
 
 ## Your Environment
 <!--- Include as many relevant details as possible about your environment -->
-* Reloadly Java SDK version used:
-* JDK version used:
+* Reloadly NodeJS SDK version used:
+* NodeJS Version used:
 * Operating System and version:
