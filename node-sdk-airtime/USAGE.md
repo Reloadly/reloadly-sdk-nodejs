@@ -55,7 +55,7 @@ res.send(balanceInfo);
 ### Option 2
 
 You may alternatively acquire an access token from the
-[AuthenticationAPI](https://github.com/reloadly/reloadly-sdk-java/blob/master/reloadly-java-sdk-authentication/USAGE.md)
+[AuthenticationAPI](https://github.com/reloadly/reloadly-sdk-nodejs/blob/master/node-sdk-authentication/USAGE.md)
 and then set it.
 
 ```typescript
