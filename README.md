@@ -8,7 +8,7 @@
 [![codecov](https://codecov.io/gh/Reloadly/reloadly-sdk-nodejs/branch/main/graph/badge.svg?token=M6750A3FJX)](https://codecov.io/gh/Reloadly/reloadly-sdk-nodejs)
 
 The **Reloadly SDK for Node.JS** enables developers to easily work with [Reloadly Services][reloadly-main-site]
-and build scalable solutions. You can get started in minutes using NuGet.
+and build scalable solutions. You can get started in minutes using npm.
 
 * [SDK Homepage][sdk-website] (Coming soon)
 * [Sample Code][sample-code]
