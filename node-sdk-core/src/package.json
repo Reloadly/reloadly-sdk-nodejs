@@ -1,11 +1,17 @@
 {
   "name": "@reloadly/reloadly.core",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "reloadly.core",
   "author": "reloadly",
+  "homepage": "https://developers.reloadly.com/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Reloadly/reloadly-sdk-nodejs.git",
+    "directory": "node-sdk-core"
+  },
   "devDependencies": {
     "@types/mocha": "^8.2.3",
-    "@types/node": "^14.17.5",
+    "@types/node": "^14.17.6",
     "mocha": "^8.4.0",
     "nyc": "^15.1.0",
     "typescript": "^4.3.5"
@@ -23,5 +29,8 @@
   "directories": {
     "test": "test"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Reloadly/reloadly-sdk-nodejs/issues"
+  }
 }

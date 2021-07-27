@@ -1,14 +1,20 @@
 {
   "name": "@reloadly/reloadly.authentication",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "reloadly.authentication",
   "author": "reloadly",
+  "homepage": "https://developers.reloadly.com/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Reloadly/reloadly-sdk-nodejs.git",
+    "directory": "node-sdk-authentication"
+  },
   "devDependencies": {
-    "@types/mocha": "^8.2.2",
-    "@types/node": "^15.6.2",
+    "@types/mocha": "^8.2.3",
+    "@types/node": "^15.14.3",
     "mocha": "^8.4.0",
     "nyc": "^15.1.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.3.5"
   },
   "scripts": {
     "build": "tsc --build",
@@ -16,12 +22,15 @@
     "test": "nyc mocha"
   },
   "dependencies": {
-    "@reloadly/reloadly.core": "^1.0.0",
+    "@reloadly/reloadly.core": "^1.0.6",
     "dotenv": "^10.0.0"
   },
   "main": "Authentication.js",
   "license": "MIT",
   "directories": {
     "test": "test"
+  },
+  "bugs": {
+    "url": "https://github.com/Reloadly/reloadly-sdk-nodejs/issues"
   }
 }
