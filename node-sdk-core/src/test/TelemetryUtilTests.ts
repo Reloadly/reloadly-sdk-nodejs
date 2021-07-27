@@ -8,7 +8,7 @@ describe('TelemetryUtil Tests', function () {
         this.timeout(0);
 
         var version = TelemetryUtil.getSDKVersion();
-        assert.ok(version == "1.0.0");
+        assert.ok(version == "1.0.6");
     });
 
     it('Create Header Value', async function () {
@@ -17,7 +17,7 @@ describe('TelemetryUtil Tests', function () {
         var telemetry = TelemetryUtil.create("1.0");
         var headerValueBase64 = TelemetryUtil.httpHeaderValue(telemetry);
         var headerValue = TelemetryUtil.base64Decode(headerValueBase64);
-        assert.ok(headerValue == '{"name":"reloadly-sdk-nodejs","api-version":"1.0","env":{"reloadly-sdk-nodejs":"1.0.0"}}');
+        assert.ok(headerValue == '{"name":"reloadly-sdk-nodejs","api-version":"1.0","env":{"reloadly-sdk-nodejs":"1.0.6"}}');
     });
 
     it('Not Create Header Value', async function () {
