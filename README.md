@@ -38,8 +38,8 @@ dependencies for the specific services you use only. For example : Authenticatio
 Add specific dependencies to your project's build file:
 
 ```
-npm install @reloadly/reloadly-airtime
-npm install @reloadly/reloadly-authentication
+npm install @reloadly/reloadly.airtime
+npm install @reloadly/reloadly.authentication
 ```
 
 ## Getting Help
